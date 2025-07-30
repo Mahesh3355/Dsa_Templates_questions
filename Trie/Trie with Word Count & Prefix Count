@@ -1,0 +1,61 @@
+struct TrieNode {
+    TrieNode* children[26];
+    int wordCount = 0;    // Number of times this word was inserted
+    int prefixCount = 0;  // Number of words with this prefix
+
+    TrieNode() {
+        for (int i = 0; i < 26; i++) children[i] = nullptr;
+    }
+};
+
+class Trie {
+    TrieNode* root;
+
+public:
+    Trie() {
+        root = new TrieNode();
+    }
+
+    void insert(const string& word) {
+        TrieNode* node = root;
+        for (char ch : word) {
+            int idx = ch - 'a';
+            if (!node->children[idx])
+                node->children[idx] = new TrieNode();
+            node = node->children[idx];
+            node->prefixCount++;
+        }
+        node->wordCount++;
+    }
+
+    int countWordsEqualTo(const string& word) {
+        TrieNode* node = root;
+        for (char ch : word) {
+            int idx = ch - 'a';
+            if (!node->children[idx]) return 0;
+            node = node->children[idx];
+        }
+        return node->wordCount;
+    }
+
+    int countWordsStartingWith(const string& prefix) {
+        TrieNode* node = root;
+        for (char ch : prefix) {
+            int idx = ch - 'a';
+            if (!node->children[idx]) return 0;
+            node = node->children[idx];
+        }
+        return node->prefixCount;
+    }
+
+    void erase(const string& word) {
+        if (countWordsEqualTo(word) == 0) return; // Word not present
+        TrieNode* node = root;
+        for (char ch : word) {
+            int idx = ch - 'a';
+            node = node->children[idx];
+            node->prefixCount--;
+        }
+        node->wordCount--;
+    }
+};
