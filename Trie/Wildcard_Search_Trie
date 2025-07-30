@@ -1,0 +1,82 @@
+struct TrieNode {
+    TrieNode* children[26] = {};
+    bool isEnd = false;
+};
+
+class WordDictionary {
+    TrieNode* root;
+
+public:
+    WordDictionary() {
+        root = new TrieNode();
+    }
+
+    void addWord(string word) {
+        TrieNode* node = root;
+        for (char ch : word) {
+            int idx = ch - 'a';
+            if (!node->children[idx]) node->children[idx] = new TrieNode();
+            node = node->children[idx];
+        }
+        node->isEnd = true;
+    }
+
+    bool search(string word) {
+        return dfs(root, word, 0);
+    }
+
+private:
+    bool dfs(TrieNode* node, string& word, int i) {
+        if (!node) return false;
+        if (i == word.size()) return node->isEnd;
+
+        if (word[i] == '.') {
+            for (int j = 0; j < 26; ++j)
+                if (dfs(node->children[j], word, i + 1)) return true;
+            return false;
+        } else {
+            return dfs(node->children[word[i] - 'a'], word, i + 1);
+        }
+    }
+};
+struct TrieNode {
+    TrieNode* children[26] = {};
+    bool isEnd = false;
+};
+
+class WordDictionary {
+    TrieNode* root;
+
+public:
+    WordDictionary() {
+        root = new TrieNode();
+    }
+
+    void addWord(string word) {
+        TrieNode* node = root;
+        for (char ch : word) {
+            int idx = ch - 'a';
+            if (!node->children[idx]) node->children[idx] = new TrieNode();
+            node = node->children[idx];
+        }
+        node->isEnd = true;
+    }
+
+    bool search(string word) {
+        return dfs(root, word, 0);
+    }
+
+private:
+    bool dfs(TrieNode* node, string& word, int i) {
+        if (!node) return false;
+        if (i == word.size()) return node->isEnd;
+
+        if (word[i] == '.') {
+            for (int j = 0; j < 26; ++j)
+                if (dfs(node->children[j], word, i + 1)) return true;
+            return false;
+        } else {
+            return dfs(node->children[word[i] - 'a'], word, i + 1);
+        }
+    }
+};
