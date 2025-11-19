@@ -1,3 +1,5 @@
+#include<bits/stdc++.h>
+using namespace std;
 class TreeAncestor {
 public:
     vector<vector<int>> table;
@@ -32,3 +34,6 @@ public:
         return node;
     }
 };
+int main(){
+    return 0;
+}
