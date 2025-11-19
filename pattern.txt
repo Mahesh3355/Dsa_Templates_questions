@@ -1,0 +1,135 @@
+✅ Top Coding Patterns — Simple & Useful
+1. Two Pointers
+
+When used: Arrays/strings where you expand/contract a window.
+How to think: “Can I solve this by moving left & right pointers instead of nested loops?”
+
+2. Sliding Window
+
+When used: Continuous subarrays with constraints (sum, length, unique chars).
+How to think: “Can I maintain a window and adjust it when the condition breaks?”
+
+3. Fast–Slow Pointer
+
+When used: Cycle detection, linked list middle, duplicates.
+How to think: “Do I need to detect a cycle or middle without extra memory?”
+
+4. Binary Search on Answer
+
+When used: Optimization problems (“maximize/minimize something”).
+How to think: “Can I check if a given answer is possible using a yes/no function?”
+
+5. Prefix Sum
+
+When used: Range queries, subarray sums.
+How to think: “Do I repeat the same sum again and again?”
+
+6. Difference Array
+
+When used: Range updates.
+How to think: “Need to apply multiple +x/-x updates on intervals efficiently?”
+
+7. Hashmap Frequency Pattern
+
+When used: Anagrams, duplicates, counting elements.
+How to think: “Do I need to track counts or compare patterns?”
+
+8. Sorting + Greedy
+
+When used: Interval scheduling, activity selection, job scheduling.
+How to think: “If I sort by some property, can I always take the best next step?”
+
+9. Monotonic Stack
+
+When used: Next greater, histogram, stock span.
+How to think: “Can I keep a stack of increasing/decreasing elements to jump over useless ones?”
+
+10. Monotonic Queue
+
+When used: Sliding window maximum/minimum.
+How to think: “Can I maintain max/min of a window without recomputing?”
+
+11. BFS (Level Order)
+
+When used: Shortest path in unweighted graphs.
+How to think: “All edges have cost 1 → BFS gives shortest distance.”
+
+12. DFS
+
+When used: Tree traversal, components, backtracking.
+How to think: “Do I explore all possible paths/subtrees?”
+
+13. Backtracking
+
+When used: Permutations, combinations, subsets, N-Queens.
+How to think: “Try a choice → recurse → undo. Is the solution space small enough?”
+
+14. DP (Knapsack Family)
+
+When used: Choose or skip items with weights/values.
+How to think: “Can I either take or not take something? Does subproblem overlap?”
+
+15. DP on Strings
+
+When used: Edit distance, LCS, palindromes.
+How to think: “Do two strings depend on prefixes? Compare characters & choose best.”
+
+16. Bitmask DP
+
+When used: Small-state problems like TSP or subsets.
+How to think: “Can I represent choices/states using bits?”
+
+17. Digit DP
+
+When used: Count numbers within a range that satisfy digit constraints.
+How to think: “Can I process number digit-by-digit with tight or free state?”
+
+18. Topological Sort
+
+When used: Ordering with prerequisites.
+How to think: “Do dependencies form a DAG? Need order respecting edges?”
+
+19. Union-Find (Disjoint Set)
+
+When used: Cycle detection, components, connectivity.
+How to think: “Can I merge sets and check if two nodes are connected fast?”
+
+20. Minimum Spanning Tree
+
+When used: Minimum cost to connect all nodes.
+How to think: “Do I need the cheapest structure connecting everything?”
+
+21. Dijkstra
+
+When used: Shortest path with weights > 0.
+How to think: “Greedily pick the next smallest distance.”
+
+22. Binary Lifting
+
+When used: LCA, jumping k steps in log time.
+How to think: “Can I store 2^k jumps to answer ancestor queries quickly?”
+
+23. Segment Tree / Fenwick Tree
+
+When used: Range queries + range updates.
+How to think: “Do I need dynamic changes with prefix/range queries?”
+
+24. Sweep Line
+
+When used: Overlapping intervals, counting active segments.
+How to think: “Sort start/end events → process left to right.”
+
+25. Meet in the Middle
+
+When used: Subset sum when N ≈ 40.
+How to think: “Split into two halves and combine results smarter than brute force.”
+
+26. Trie
+
+When used: Prefix searching, dictionary lookups.
+How to think: “Do I need fast prefix queries or autocomplete type searching?”
+
+27. Rolling Hash
+
+When used: String matching, substring equality.
+How to think: “Can I convert substring → number so I can compare quickly?”
