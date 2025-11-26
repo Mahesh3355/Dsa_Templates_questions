@@ -1,0 +1,24 @@
+BIT CONTRIBUTION PATTERN
+------------------------
+
+For any bitwise aggregation (XOR, OR, AND),
+treat each bit b independently.
+
+Compute:
+    count1[b] = number of elements with bit b == 1
+    count0[b] = n - count1[b]
+
+Then find:
+    how many subsets/pairs/sequences make bit b contribute?
+
+Typical formulas:
+
+XOR(subsets): contributes 2^(n-1) times if count1[b] > 0
+OR(subsets): contributes (2^n - 2^count0[b]) times
+AND(subsets): contributes (2^count1[b] - 1) times
+
+XOR(pairs): contributes count1[b] * count0[b]
+OR(pairs): contributes nC2 - count0[b]C2
+
+General:
+    sum += (1 << b) * contribution
